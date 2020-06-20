@@ -6,14 +6,12 @@
         <div>
             <h1><a href="/">Oguzhan blog</a></h1>
         </div>
-        <div>
-            <h2><a href="">İlk Deneme Blogum</a></h2>
-            <p> Deneme yazı ile beraber</p>
-        </div>
-
-        <div>
-            <h2><a href="">Diğer Başlık</a></h2>
-            <p> Diğer yazı ile beraber</p>
-        </div>
+        {% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
     </body>
 </html>
